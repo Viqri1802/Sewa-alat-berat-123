@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Sewa Alat Berat, Towing, Konstruksi & Material Bangunan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#F59E0B',
+                            yellowDark: '#D97706',
+                            yellowLight: '#FEF3C7',
+                            black: '#0F172A',
+                            dark: '#1E293B',
+                            gray: '#334155',
+                            accentBlue: '#0284C7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hazard-pattern {
+            background: repeating-linear-gradient(
+                -45deg,
+                #F59E0B,
+                #F59E0B 15px,
+                #0F172A 15px,
+                #0F172A 30px
+            );
+        }
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.96) 100%);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .toast-notification {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Top Bar -->
+    <div class="bg-slate-950 border-b border-slate-800 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-mx auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-slate-300">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-500"></i> <strong class="text-white">SEWA ALAT BERAT CEPAT TANPA PERANTARA</strong></span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-amber-500"></i> Layanan 24 Jam Nonstop</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:081275445633" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-amber-500 text-xs"></i> Pak Hardi: <span class="font-bold text-white">0812-7544-5633</span>
+                </a>
+                <span class="text-slate-700">|</span>
+                <a href="tel:085264342277" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-amber-500 text-xs"></i> Pak Davit: <span class="font-bold text-white">0852-6434-2277</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-lg bg-amber-500 p-0.5 overflow-hidden flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                        <img id="mainLogo" src="https://lh3.googleusercontent.com/d/1c6aWmXPij8AlyH5xCaDQbxaGjBbCYa8q" 
+                             alt="Logo Perusahaan" 
+                             class="w-full h-full object-cover rounded"
+                             onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fa-solid fa-truck-monster text-2xl text-slate-900\"></i>';">
+                    </div>
+                    <div>
+                        <span class="block text-lg font-black tracking-tight text-white leading-none">
+                            ALAT BERAT & KONSTRUKSI
+                        </span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-amber-500 block mt-1">
+                            Towing • Material • Konsultan
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="#armada" class="text-slate-300 hover:text-amber-400 transition-colors">Sewa Alat & Towing</a>
+                    <a href="#konstruksi" class="text-slate-300 hover:text-amber-400 transition-colors">Jasa Konstruksi</a>
+                    <a href="#material" class="text-slate-300 hover:text-amber-400 transition-colors">Bahan Material</a>
+                    <a href="#kalkulator" class="text-slate-300 hover:text-amber-400 transition-colors">Hitung Estimasi</a>
+                    <a href="#portofolio" class="text-slate-300 hover:text-amber-400 transition-colors">Portofolio</a>
+                    <a href="#lokasi" class="text-slate-300 hover:text-amber-400 transition-colors">Lokasi & Kontak</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openWAModal('Halo Pak, saya ingin tanya sewa alat berat / material bangunan.')" 
+                            class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-5 py-2.5 rounded-lg shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Hubungi Langsung</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#armada" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Sewa Alat Berat & Towing</a>
+            <a href="#konstruksi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Jasa Konstruksi & Konsultan</a>
+            <a href="#material" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Bahan Material Bangunan</a>
+            <a href="#kalkulator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Kalkulator Estimasi</a>
+            <a href="#portofolio" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Portofolio Proyek</a>
+            <a href="#lokasi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Lokasi & Kontak</a>
+            <div class="pt-2 border-t border-slate-800 grid grid-cols-2 gap-2">
+                <a href="https://wa.me/6281275445633?text=Halo%20Pak%20Hardi,%20saya%20butuh%20sewa%20alat%20berat" target="_blank" class="bg-amber-500 text-slate-950 text-center py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-1">
+                    <i class="fa-brands fa-whatsapp"></i> Pak Hardi
+                </a>
+                <a href="https://wa.me/6285264342277?text=Halo%20Pak%20Davit,%20saya%20butuh%20sewa%20alat%20berat" target="_blank" class="bg-slate-800 text-amber-400 border border-amber-500/30 text-center py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-1">
+                    <i class="fa-brands fa-whatsapp"></i> Pak Davit
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-slate-950 overflow-hidden py-16 lg:py-24 border-b border-slate-800">
+        <!-- Background Pattern & Glows -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 -left-40 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Left -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 text-amber-400 text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                        Langsung Pemilik Armada • Tanpa Calo & Perantara
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        SEWA ALAT BERAT <br>
+                        <span class="text-amber-500 underline decoration-amber-500/40 underline-offset-8">CEPAT & TERPERCAYA</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Melayani Penyewaan Excavator, Bulldozer, Crane, Mobil Towing, Jasa Konsultan Bangunan, Pengurugan Land Clearing, hingga Pengadaan Material Bangunan Berkualitas.
+                    </p>
+
+                    <!-- Features highlights -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
+                        <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+                            <div class="p-2 rounded bg-amber-500/10 text-amber-400"><i class="fa-solid fa-truck-ramp-box text-xl"></i></div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Sewa Harian / Bulanan</h4>
+                                <p class="text-[11px] text-slate-400">Fleksibel & Transparan</p>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+                            <div class="p-2 rounded bg-sky-500/10 text-sky-400"><i class="fa-solid fa-headset text-xl"></i></div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Towing Emergency</h4>
+                                <p class="text-[11px] text-slate-400">Siap Standby 24 Jam</p>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center gap-3 col-span-2 sm:col-span-1">
+                            <div class="p-2 rounded bg-emerald-500/10 text-emerald-400"><i class="fa-solid fa-cubes text-xl"></i></div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Material Siap Kirim</h4>
+                                <p class="text-[11px] text-slate-400">Pasir, Batu & Sirtu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <button onclick="openWAModal('Halo, saya ingin berkonsultasi mengenai sewa alat berat / jasa konstruksi.')" 
+                                class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span class="text-base">Minta Penawaran Harga</span>
+                        </button>
+
+                        <a href="#armada" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 py-4 rounded-xl border border-slate-700 text-center transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span>Lihat Daftar Armada</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact & Direct Call Card Right -->
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-2xl relative">
+                        <div class="absolute -top-3 right-6 bg-amber-500 text-slate-950 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                            Respon Cepat 24/7
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-shield text-amber-500"></i> Kontak Pengelola Langsung
+                        </h3>
+                        <p class="text-xs text-slate-400 mb-6">Hubungi penanggung jawab resmi untuk mendapatkan kepastian stok armada, harga sewa terbaik, dan lokasi pengiriman material.</p>
+
+                        <!-- Owner Contact 1 -->
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 mb-4 hover:border-amber-500/50 transition-all flex items-center justify-between gap-3">
+                            <div>
+                                <span class="text-[11px] text-amber-400 font-bold uppercase tracking-wider block">Pengelola / Owner</span>
+                                <h4 class="text-lg font-extrabold text-white">BAPAK HARDI (MALIN)</h4>
+                                <p class="text-sm font-semibold text-slate-300"><i class="fa-solid fa-phone text-xs text-amber-500 mr-1"></i> 0812-7544-5633</p>
+                            </div>
+                            <a href="https://wa.me/6281275445633?text=Halo%20Bapak%20Hardi%20(Malin),%20saya%20ingin%20tanya%20sewa%20alat%20berat/konstruksi" 
+                               target="_blank" 
+                               class="bg-emerald-600 hover:bg-emerald-500 text-white p-3 rounded-lg shadow-lg flex items-center justify-center font-bold gap-1 transition-all">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span class="hidden sm:inline text-xs">Chat WA</span>
+                            </a>
+                        </div>
+
+                        <!-- Owner Contact 2 -->
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 mb-6 hover:border-amber-500/50 transition-all flex items-center justify-between gap-3">
+                            <div>
+                                <span class="text-[11px] text-amber-400 font-bold uppercase tracking-wider block">Pengelola / Owner</span>
+                                <h4 class="text-lg font-extrabold text-white">BAPAK DAVIT</h4>
+                                <p class="text-sm font-semibold text-slate-300"><i class="fa-solid fa-phone text-xs text-amber-500 mr-1"></i> 0852-6434-2277</p>
+                            </div>
+                            <a href="https://wa.me/6285264342277?text=Halo%20Bapak%20Davit,%20saya%20ingin%20tanya%20sewa%20alat%20berat/konstruksi" 
+                               target="_blank" 
+                               class="bg-emerald-600 hover:bg-emerald-500 text-white p-3 rounded-lg shadow-lg flex items-center justify-center font-bold gap-1 transition-all">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span class="hidden sm:inline text-xs">Chat WA</span>
+                            </a>
+                        </div>
+
+                        <!-- Hazard Warning Strip -->
+                        <div class="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-center">
+                            <p class="text-xs text-amber-300 font-medium">
+                                <i class="fa-solid fa-circle-exclamation mr-1"></i> transaksi lebih aman & murah tanpa biaya komisi agen/perantara!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section: Rental Alat Berat & Towing -->
+    <section id="armada" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Armada Lengkap & Terawat</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Rental Alat Berat & Mobil Towing</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Pilihan unit sehat, berizin, didukung operator berpengalaman jam terbang tinggi untuk proyek skala kecil hingga proyek strategis.</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterFleet('all')" id="btn-all" class="fleet-tab active bg-amber-500 text-slate-950 font-bold px-5 py-2 rounded-lg text-sm transition-all">Semua Armada</button>
+                <button onclick="filterFleet('excavator')" id="btn-excavator" class="fleet-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-bold px-5 py-2 rounded-lg text-sm transition-all">Excavator</button>
+                <button onclick="filterFleet('bulldozer')" id="btn-bulldozer" class="fleet-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-bold px-5 py-2 rounded-lg text-sm transition-all">Bulldozer</button>
+                <button onclick="filterFleet('crane')" id="btn-crane" class="fleet-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-bold px-5 py-2 rounded-lg text-sm transition-all">Crane & Loader</button>
+                <button onclick="filterFleet('towing')" id="btn-towing" class="fleet-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-bold px-5 py-2 rounded-lg text-sm transition-all">Mobil Towing & Trailer</button>
+            </div>
+
+            <!-- Fleet Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="fleetGrid">
+                
+                <!-- Item 1: Excavator PC200 -->
+                <div class="fleet-card excavator bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Excavator Komatsu PC200" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded">Sewa Harian / Bulanan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Excavator Komatsu PC200 / PC75</h3>
+                            <p class="text-xs text-slate-400 mb-4">Cocok untuk galian tanah keras, pematangan lahan, pengerukan pondasi, dan pembuatan saluran air proyek besar.</p>
+                            
+                            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Capacity Bucket: 0.8 - 0.9 m³</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Kondisi Mesin Prime & SIOP Aktif</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Termasuk Operator Berpengalaman</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase">Sistem Sewa</span>
+                            <span class="text-sm font-bold text-amber-400">Jam / Hari / Bulan</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya mau tanya ketersediaan & harga sewa Excavator Komatsu PC200.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Sewa Unit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Bulldozer D65 -->
+                <div class="fleet-card bulldozer bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Bulldozer D31 / D65" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded">Pematangan Lahan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Bulldozer D31 / D65 / D85</h3>
+                            <p class="text-xs text-slate-400 mb-4">Spesialis pemerataan tanah, perintisan jalan proyek, perataan sirtu, dan pembersihan area perkebunan / tambang.</p>
+                            
+                            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Blade Lebar & Ripper Kuat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Siap Kerja Lahan Rawa/Keras</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> BBM Solusi Fleksibel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase">Sistem Sewa</span>
+                            <span class="text-sm font-bold text-amber-400">Harian / Kontrak Proyek</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya mau tanya sewa Bulldozer D31/D65 untuk pematangan lahan.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Sewa Unit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Mobile Crane & Wheel Loader -->
+                <div class="fleet-card crane bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Mobile Crane & Loader" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded">Kapasitas 25T - 50T</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Mobile Crane & Wheel Loader</h3>
+                            <p class="text-xs text-slate-400 mb-4">Pengangkatan material berat, ereksi struktur baja, tiang pancang, serta pemuatan material ke dump truck secara cepat.</p>
+                            
+                            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Boom Panjang & Rigger Lengkap</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> SIO Operator Resmi Aktif</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Cocok untuk Pabrik & Proyek Gedung</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase">Sistem Sewa</span>
+                            <span class="text-sm font-bold text-amber-400">Shift / Harian / Bulanan</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya butuh penawaran sewa Mobile Crane / Wheel Loader.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Sewa Unit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 4: Towing Mobil & Dropdeck Trailer -->
+                <div class="fleet-card towing bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Jasa Towing Mobil & Tronton Lowbed" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-sky-500 text-white font-extrabold text-[10px] uppercase px-2.5 py-1 rounded">24 Jam Standby</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Jasa Towing Mobil & Lowbed Trailer</h3>
+                            <p class="text-xs text-slate-400 mb-4">Pengiriman kendaraan darurat, mobil mogok, pengangkutan mesin industri, serta selang alat berat antar kota & provinsi.</p>
+                            
+                            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Towing Gendong (Flatbed) & Dereck</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Asuransi Pengiriman Opsional</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Penjemputan Cepat Dalam & Luar Kota</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase">Area Jangkauan</span>
+                            <span class="text-sm font-bold text-amber-400">Antar Kota / Provinsi</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya membutuhkan jasa Towing / Mobil Dereksi emergency.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order Towing
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 5: Vibro Roller & Compactor -->
+                <div class="fleet-card bulldozer bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Vibro Roller Compactor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded">Pemadatan Lahan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Vibratory Roller (Vibro 10-12 Ton)</h3>
+                            <p class="text-xs text-slate-400 mb-4">Penggilas dan pemadat tanah, fondasi jalan, pondasi gudang, dan pemadatan sirtu/sub-base jalan raya.</p>
+                            
+                            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Getaran Kuat Kepadatan Maksimal</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Roda Besi & Padfoot Roller Available</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Siap Proyek Jalan & Perumahan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase">Sistem Sewa</span>
+                            <span class="text-sm font-bold text-amber-400">Harian / Bulanan</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya mau tanya sewa Vibro Roller Compactor.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Sewa Unit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 6: Dump Truck Index 8 & 24 -->
+                <div class="fleet-card towing bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Armada Dump Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded">Angkut Material</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Dump Truck (Index 7-8 & Index 24)</h3>
+                            <p class="text-xs text-slate-400 mb-4">Armada angkut timbunan tanah, pasir, batu split, puing bangunan, dan pembuangan sisa pematangan lahan.</p>
+                            
+                            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Armada Engkel & Tronton Roda 10</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Pengiriman Tepat Waktu & Aman</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Kontrak Ritase / Sewa Harian</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-800/60 mt-auto flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase">Sistem Sewa</span>
+                            <span class="text-sm font-bold text-amber-400">Ritase / Harian / Kontrak</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya butuh armada Dump Truck untuk pengangkutan/timbunan.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Sewa Unit
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Jasa Konstruksi & Konsultan Bangunan -->
+    <section id="konstruksi" class="py-20 bg-slate-950 border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-sky-400 font-bold text-xs uppercase tracking-widest bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+                        Layanan Terpadu
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Jasa Konstruksi & Konsultan Bangunan
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Kami tidak hanya menyewakan alat, tapi juga melayani perencanaan dan pelaksanaan pekerjaan fisik dari hulu ke hilir dengan standar teknis profesional.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg shrink-0">
+                                <i class="fa-solid fa-compass-drafting text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Desain Arsitektur & Perencanaan</h4>
+                                <p class="text-xs text-slate-400 mt-1">Pembuatan gambar kerja 2D/3D, tata ruang efisien, dan visualisasi bangunan komersial maupun hunian.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg shrink-0">
+                                <i class="fa-solid fa-calculator text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Perhitungan Struktur & RAB</h4>
+                                <p class="text-xs text-slate-400 mt-1">Perhitungan Rencana Anggaran Biaya (RAB) yang presisi, hemat bahan, dan analisis kekuatan fondasi & struktur beton/baja.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg shrink-0">
+                                <i class="fa-solid fa-trowel-bricks text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Pekerjaan Cut & Fill / Pengurugan</h4>
+                                <p class="text-xs text-slate-400 mt-1">Pembersihan lahan, pematangan tanah perumahan, pengerukan rawa, hingga perataan jalan akses pabrik/ruko.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg shrink-0">
+                                <i class="fa-solid fa-clipboard-check text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Pengawasan Proyek & Manajamen</h4>
+                                <p class="text-xs text-slate-400 mt-1">Pengawasan langsung di lapangan agar mutu beton, spesifikasi besi, dan timeline pekerjaan selesai sesuai target.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="openWAModal('Halo Pak, saya mau konsultasi proyek konstruksi / pembuatan RAB & desain.')" 
+                                class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg flex items-center gap-2 transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Konsultasi Proyek Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Feature Box -->
+                <div class="lg:col-span-7 bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-slate-100 text-9xl">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-diagram-project text-amber-500"></i> Alur Kerja Konsultasi & Konstruksi
+                    </h3>
+
+                    <div class="space-y-6 relative border-l-2 border-slate-800 ml-4 pl-6">
+                        <!-- Step 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center">1</span>
+                            <h4 class="text-base font-bold text-white">Survei Lokasi & Diskusi Kebutuhan</h4>
+                            <p class="text-xs text-slate-400 mt-1">Tim kami datang ke lokasi Anda untuk pengukuran kontur tanah, mengecek akses jalan, dan berdiskusi ide pembangunan.</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-slate-800 text-amber-400 font-black text-xs flex items-center justify-center border border-amber-500/40">2</span>
+                            <h4 class="text-base font-bold text-white">Penyusunan Desain & Transparansi RAB</h4>
+                            <p class="text-xs text-slate-400 mt-1">Estimasi rincian biaya bahan material, sewa alat berat yang dibutuhkan, serta estimasi waktu pengerjaan tanpa biaya tersembunyi.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative">
+                            <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-slate-800 text-amber-400 font-black text-xs flex items-center justify-center border border-amber-500/40">3</span>
+                            <h4 class="text-base font-bold text-white">Mobilisasi Alat & Eksekusi Lapangan</h4>
+                            <p class="text-xs text-slate-400 mt-1">Penurunan alat berat ke lapangan, pengiriman suplai material secara berkala, dan pengerjaan oleh tim tukang & operator handal.</p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative">
+                            <span class="absolute -left-[35px] top-0 w-8 h-8 rounded-full bg-slate-800 text-amber-400 font-black text-xs flex items-center justify-center border border-amber-500/40">4</span>
+                            <h4 class="text-base font-bold text-white">Serah Terima Proyek & Garansi</h4>
+                            <p class="text-xs text-slate-400 mt-1">Inspeksi akhir bersama pemilik proyek, serah terima berkas, dan pemeliharaan hasil pengerjaan.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-slate-950 rounded-xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-300 block">Punya Gambar Rencana / Gambar Kerja?</span>
+                            <span class="text-[11px] text-slate-500">Kirimkan file PDF / foto denah Anda untuk kami hitungkan RAB-nya secara gratis.</span>
+                        </div>
+                        <button onclick="openWAModal('Halo Pak, saya mau kirim file gambar/denah untuk dihitung RAB-nya.')" class="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-lg text-xs font-bold shrink-0">
+                            Kirim File via WA
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Bahan Material Bangunan -->
+    <section id="material" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Suplai Material Konstruksi</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Bahan Material Bangunan Quality Control</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Pengadaan material berkualitas untuk pondasi, struktur beton, timbunan, hingga pasangan dinding dengan pengiriman armada sendiri.</p>
+            </div>
+
+            <!-- Material Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Material 1 -->
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-2xl mb-4">
+                        <i class="fa-solid fa-mountain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Pasir Pasang & Beton</h3>
+                    <p class="text-xs text-slate-400 mb-3">Pasir cuci bebas lumpur, pasir pasang halus, dan pasir cor beton mutu tinggi.</p>
+                    <span class="text-[11px] text-amber-400 font-semibold block mb-4">Satuan: Cold Diesel / Colt Tronton</span>
+                    <button onclick="openWAModal('Halo Pak, saya butuh penawaran Pasir Pasang/Beton.')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2 rounded-lg transition-colors">Minta Harga</button>
+                </div>
+
+                <!-- Material 2 -->
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-2xl mb-4">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Batu Belah & Batu Split</h3>
+                    <p class="text-xs text-slate-400 mb-3">Batu pondasi (batu belah), batu split ukuran 1x2, 2x3, dan batu makadam pengerasan jalan.</p>
+                    <span class="text-[11px] text-amber-400 font-semibold block mb-4">Satuan: M³ / Dump Truck</span>
+                    <button onclick="openWAModal('Halo Pak, saya mau minta harga Batu Belah & Split.')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2 rounded-lg transition-colors">Minta Harga</button>
+                </div>
+
+                <!-- Material 3 -->
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-2xl mb-4">
+                        <i class="fa-solid fa-mound"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Tanah Urug & Sirtu</h3>
+                    <p class="text-xs text-slate-400 mb-4">Tanah merah super, tanah sirtu (pasir batu), dan tanah padas untuk urugan pondasi dan pematangan lahan.</p>
+                    <span class="text-[11px] text-amber-400 font-semibold block mb-4">Satuan: Per Rit / Kontrak Pasokan</span>
+                    <button onclick="openWAModal('Halo Pak, saya butuh Tanah Urug / Sirtu untuk penimbunan.')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2 rounded-lg transition-colors">Minta Harga</button>
+                </div>
+
+                <!-- Material 4 -->
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-2xl mb-4">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Semen & Besi Beton</h3>
+                    <p class="text-xs text-slate-400 mb-3">Semen PPC/PCC sak, besi beton polos & ulir SNI berbagai ukuran, wiremesh, dan spandek.</p>
+                    <span class="text-[11px] text-amber-400 font-semibold block mb-4">Satuan: Sak / Batang / Btg SNI</span>
+                    <button onclick="openWAModal('Halo Pak, saya mau minta harga Semen & Besi Beton SNI.')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2 rounded-lg transition-colors">Minta Harga</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Interactive Calculator (Kalkulator Penawaran Instant) -->
+    <section id="kalkulator" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Fitur Interaktif</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Simulasi & Form Minta Penawaran Harga (Request Quote)</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-1">Pilih kebutuhan alat/material Anda untuk membuat draft rincian pesanan dan terhubung langsung ke WhatsApp pengelola.</p>
+                </div>
+
+                <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Nama Pemesan -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Nama Lengkap / Perusahaan *</label>
+                            <input type="text" id="quoteName" required placeholder="Contoh: PT. Karya Utama / Pak Budi" 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+
+                        <!-- Lokasi Proyek -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Lokasi Proyek / Pengiriman *</label>
+                            <input type="text" id="quoteLocation" required placeholder="Contoh: Kec. Tambang, Pekanbaru / Kampar" 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+
+                        <!-- Layanan Utama -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Kategori Utama *</label>
+                            <select id="quoteCategory" onchange="updateSubOptions()" required 
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <option value="Sewa Alat Berat">Sewa Alat Berat</option>
+                                <option value="Jasa Towing Mobil">Jasa Towing Mobil / Dereksi</option>
+                                <option value="Jasa Konstruksi & Konsultan">Jasa Konstruksi & Konsultan (RAB/Desain)</option>
+                                <option value="Bahan Material Bangunan">Bahan Material Bangunan</option>
+                            </select>
+                        </div>
+
+                        <!-- Sub Pilihan -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Pilihan Armada / Material *</label>
+                            <select id="quoteSubItem" required 
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <!-- Populated dynamically by JS -->
+                            </select>
+                        </div>
+
+                        <!-- Durasi / Volume -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Estimasi Durasi / Volume *</label>
+                            <input type="text" id="quoteVolume" required placeholder="Contoh: 5 Hari / 10 Dump Truck / 2 Bulan" 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+
+                        <!-- Pilih Kontak Pengelola -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Tujuan Kontak WA *</label>
+                            <select id="quoteTargetPhone" required 
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <option value="6281275445633">Bapak Hardi (Malin) - 0812-7544-5633</option>
+                                <option value="6285264342277">Bapak Davit - 0852-6434-2277</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Catatan Tambahan -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Detail Pengerjaan / Catatan Spesifik</label>
+                        <textarea id="quoteNotes" rows="3" placeholder="Tuliskan jika ada kondisi tanah rawa, jam kerja malam, atau spesifikasi besi/beton khusus..." 
+                                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-2">
+                        <button type="submit" 
+                                class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-10 py-4 rounded-xl shadow-xl shadow-amber-500/20 hover:scale-105 transition-all text-base flex items-center justify-center gap-2 mx-auto">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Kirim & Dapatkan Penawaran via WA</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Galeri Portofolio Proyek -->
+    <section id="portofolio" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Rekam Jejak Lapangan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Galeri Foto Proyek Terdahulu</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Dokumentasi nyata hasil kerja tim alat berat, pengerjaan cut & fill, pengurugan, dan pengiriman material di berbagai lapangan.</p>
+            </div>
+
+            <!-- Portfolio Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=600&q=80" 
+                             alt="Pematangan Lahan Perumahan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-amber-400 font-bold text-sm bg-slate-900/90 px-4 py-2 rounded-lg border border-amber-500/40">Pengurugan Lahan Rawa</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-base font-bold text-white">Cut & Fill & Land Clearing Perumahan</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Area Pematangan & Pemadatan Lahan</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" 
+                             alt="Excavator Galian Drainase" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-amber-400 font-bold text-sm bg-slate-900/90 px-4 py-2 rounded-lg border border-amber-500/40">Galian Pondasi & Parit</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-base font-bold text-white">Pengerukan Saluran & Pondasi Gudang</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Proyek Kawasan Industri & Komersial</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" 
+                             alt="Evakuasi & Towing Mobil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-amber-400 font-bold text-sm bg-slate-900/90 px-4 py-2 rounded-lg border border-amber-500/40">Pengangkutan Alat Berat</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-base font-bold text-white">Mobilisasi Alat Heavy Duty & Towing</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Pengiriman Antar Provinsi & Kota</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Testimoni Pelanggan -->
+    <section class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Ulasan Klien</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Kepuasan Pelanggan & Mitra Proyek</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="flex text-amber-500 gap-1 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                        "Sewa excavator di Pak Hardi prosesnya cepat sekali tanpa muter-muter agen. Harga langsung dari pemilik, unit sehat tidak banyak kendala di lapangan. Sangat direkomendasikan!"
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                            H
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Hendra Wijaya</h4>
+                            <span class="text-[11px] text-slate-500">Kontraktor Perumahan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="flex text-amber-500 gap-1 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                        "Jasa towing emergency jam 2 malam sangat membantu waktu truk ekspedisi kami trouble di jalan. Pak Davit langsung kirim armada unit towing dengan cepat."
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-sky-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Agus Pratama</h4>
+                            <span class="text-[11px] text-slate-500">Pemilik Usaha Logistik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative">
+                    <div class="flex text-amber-500 gap-1 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                        "Pasokan pasir dan batu split tepat waktu untuk proyek pengecoran gudang kami. Hitungan kubikasi jujur dan konsultasi RAB-nya sangat transparan."
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Siti Rahmawati</h4>
+                            <span class="text-[11px] text-slate-500">Pengembang Proyek Ruko</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Lokasi Google Maps & Kontak Utama -->
+    <section id="lokasi" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Info Contacts Left -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-500 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Lokasi & Operasional</span>
+                    <h2 class="text-3xl font-extrabold text-white">Kunjungi Pool Armada & Kantor Kami</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm">Silakan datang langsung ke lokasi pool armada kami untuk memeriksa kondisi unit alat berat, negosiasi penawaran, atau diskusi proyek.</p>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-amber-500 text-lg mt-0.5"></i>
+                            <div>
+                                <strong class="text-white block">Lokasi Google Maps:</strong>
+                                <a href="https://share.google/XEtBmhof4W5h5pUM0" target="_blank" class="text-amber-400 underline hover:text-amber-300 transition-colors">
+                                    Klik Di Sini Untuk Buka Lokasi Google Maps
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-amber-500 text-lg mt-0.5"></i>
+                            <div>
+                                <strong class="text-white block">Kontak Pengelola Direct:</strong>
+                                <p>• Bapak Hardi (Malin) : <a href="tel:081275445633" class="text-amber-400 font-bold">0812-7544-5633</a></p>
+                                <p>• Bapak Davit : <a href="tel:085264342277" class="text-amber-400 font-bold">0852-6434-2277</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-amber-500 text-lg mt-0.5"></i>
+                            <div>
+                                <strong class="text-white block">Jam Layanan:</strong>
+                                <p>Senin - Minggu: 24 Jam Nonstop (Layanan Towing & Sewa Alat Urgent)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://share.google/XEtBmhof4W5h5pUM0" target="_blank" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-6 py-3 rounded-xl transition-all text-xs">
+                            <i class="fa-solid fa-map-location-dot text-base"></i> Buka Rute Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Card Right -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 shadow-xl overflow-hidden">
+                        <div class="relative w-full h-80 sm:h-96 rounded-xl bg-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-6 border border-slate-800">
+                            <!-- Placeholder Map Visual Card -->
+                            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#0284C7_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            <i class="fa-solid fa-map-pin text-5xl text-amber-500 mb-3 animate-bounce"></i>
+                            <h3 class="text-xl font-black text-white relative z-10">Pool Alat Berat & Kantor Resmi</h3>
+                            <p class="text-xs text-slate-300 max-w-md mt-2 relative z-10">Navigasi langsung menggunakan Google Maps resmi kami untuk menemukan rute pool terdekat.</p>
+                            <a href="https://share.google/XEtBmhof4W5h5pUM0" target="_blank" 
+                               class="mt-6 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-3 rounded-xl text-xs flex items-center gap-2 relative z-10 shadow-lg shadow-amber-500/20">
+                                <i class="fa-solid fa-directions text-lg"></i> Petunjuk Rute Lokasi Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-3 md:col-span-1">
+                    <span class="text-white font-extrabold text-base block">JASA SEWA ALAT BERAT</span>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Penyedia jasa sewa alat berat, mobil towing derek, konsultan bangunan, pengurugan lahan, serta bahan material bangunan berkualitas.
+                    </p>
+                    <span class="text-amber-500 font-bold block text-xs">SEWA ALAT BERAT CEPAT TANPA PERANTARA</span>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-2">
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Layanan Utama</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#armada" class="hover:text-amber-400 transition-colors">Sewa Excavator PC200</a></li>
+                        <li><a href="#armada" class="hover:text-amber-400 transition-colors">Sewa Bulldozer D31/D65</a></li>
+                        <li><a href="#armada" class="hover:text-amber-400 transition-colors">Mobile Crane & Loader</a></li>
+                        <li><a href="#armada" class="hover:text-amber-400 transition-colors">Jasa Towing Mobil 24 Jam</a></li>
+                        <li><a href="#material" class="hover:text-amber-400 transition-colors">Suplai Pasir & Batu Split</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-2">
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Konsultan Konstruksi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#konstruksi" class="hover:text-amber-400 transition-colors">Desain Arsitektur 2D/3D</a></li>
+                        <li><a href="#konstruksi" class="hover:text-amber-400 transition-colors">Perhitungan RAB Proyek</a></li>
+                        <li><a href="#konstruksi" class="hover:text-amber-400 transition-colors">Pekerjaan Cut & Fill</a></li>
+                        <li><a href="#konstruksi" class="hover:text-amber-400 transition-colors">Pengawasan Lapangan</a></li>
+                        <li><a href="#kalkulator" class="hover:text-amber-400 transition-colors">Hitung Simulasi Harga</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Kontak Langsung</h4>
+                    <p class="text-slate-300 font-semibold"><i class="fa-solid fa-user-gear text-amber-500 mr-2"></i> Pak Hardi (Malin): 0812-7544-5633</p>
+                    <p class="text-slate-300 font-semibold"><i class="fa-solid fa-user-gear text-amber-500 mr-2"></i> Pak Davit: 0852-6434-2277</p>
+                    <div class="pt-2">
+                        <a href="https://share.google/XEtBmhof4W5h5pUM0" target="_blank" class="text-sky-400 hover:underline flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot"></i> Peta Google Maps Resmi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-[11px]">
+                <p>&copy; 2026 Jasa Sewa Alat Berat, Towing, Jasa Konstruksi & Material Bangunan. All rights reserved.</p>
+                <p>Sewa Alat Berat Cepat Tanpa Perantara - Pengelola Resmi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleWASelector()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black p-4 rounded-full shadow-2xl flex items-center justify-center gap-2 group transition-all hover:scale-110">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+            <span class="hidden sm:inline font-extrabold text-sm pr-1">Chat Whatsapp</span>
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-300"></span>
+            </span>
+        </button>
+
+        <!-- Popup WA Selector Box -->
+        <div id="waSelectorBox" class="hidden absolute bottom-16 right-0 w-80 bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl p-4 text-slate-100 z-50">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+                <div class="flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-500 text-xl"></i>
+                    <span class="font-bold text-xs uppercase tracking-wider text-white">Pilih Kontak Pengelola</span>
+                </div>
+                <button onclick="toggleWASelector()" class="text-slate-400 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <p class="text-[11px] text-slate-400 mb-3">Pilih kontak pengelola di bawah untuk langsung terhubung melalui WhatsApp:</p>
+
+            <div class="space-y-2">
+                <a href="https://wa.me/6281275445633?text=Halo%20Bapak%20Hardi%20(Malin),%20saya%20ingin%20bertanya%20sewa%20alat%20berat/material/konstruksi" 
+                   target="_blank" 
+                   class="block bg-slate-900 hover:bg-slate-800 p-3 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h5 class="text-xs font-extrabold text-white">Bapak Hardi (Malin)</h5>
+                            <span class="text-[10px] text-emerald-400 font-semibold">0812-7544-5633</span>
+                        </div>
+                        <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/6285264342277?text=Halo%20Bapak%20Davit,%20saya%20ingin%20bertanya%20sewa%20alat%20berat/material/konstruksi" 
+                   target="_blank" 
+                   class="block bg-slate-900 hover:bg-slate-800 p-3 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h5 class="text-xs font-extrabold text-white">Bapak Davit</h5>
+                            <span class="text-[10px] text-emerald-400 font-semibold">0852-6434-2277</span>
+                        </div>
+                        <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic WA Modal -->
+    <div id="waModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeWAModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-3 bg-amber-500/10 text-amber-500 rounded-xl">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Pilih Kontak Tujuan</h3>
+                    <p class="text-xs text-slate-400">Silakan pilih penanggung jawab yang ingin Anda hubungi:</p>
+                </div>
+            </div>
+
+            <p id="waModalPreviewMessage" class="text-xs bg-slate-950 p-3 rounded-lg border border-slate-800 text-slate-300 mb-6 italic">
+                "Pesan otomatis akan dibuat..."
+            </p>
+
+            <div class="space-y-3">
+                <button onclick="redirectWA('6281275445633')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-between transition-all">
+                    <span>Hubungi <strong class="text-amber-300">Bapak Hardi (Malin)</strong></span>
+                    <span class="text-[11px] bg-emerald-700 px-2 py-0.5 rounded">0812-7544-5633</span>
+                </button>
+
+                <button onclick="redirectWA('6285264342277')" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-between border border-slate-700 transition-all">
+                    <span>Hubungi <strong class="text-amber-300">Bapak Davit</strong></span>
+                    <span class="text-[11px] bg-slate-900 px-2 py-0.5 rounded">0852-6434-2277</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Sub Pilihan Dynamic
+        const subCategoryData = {
+            "Sewa Alat Berat": [
+                "Excavator Komatsu PC200 / PC75",
+                "Bulldozer D31 / D65",
+                "Mobile Crane 25T - 50T",
+                "Wheel Loader / Vibro Roller",
+                "Dump Truck Index 8 / Index 24"
+            ],
+            "Jasa Towing Mobil": [
+                "Towing Mobil Mogok Emergency",
+                "Pengangkutan Alat Berat Lowbed",
+                "Derek Mobil Antar Kota/Provinsi"
+            ],
+            "Jasa Konstruksi & Konsultan": [
+                "Pembuatan RAB & Desain Arsitektur",
+                "Pekerjaan Cut & Fill / Pengurugan",
+                "Pengawasan & Manajemen Proyek"
+            ],
+            "Bahan Material Bangunan": [
+                "Pasir Pasang & Beton",
+                "Batu Belah & Batu Split (1x2, 2x3)",
+                "Tanah Urug Merah & Sirtu",
+                "Semen PPC & Besi Beton SNI"
+            ]
+        };
+
+        let currentWAMessage = "";
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Toggle WA Selector Floating Box
+        function toggleWASelector() {
+            const box = document.getElementById('waSelectorBox');
+            box.classList.toggle('hidden');
+        }
+
+        // Open WA Modal
+        function openWAModal(customText) {
+            currentWAMessage = customText;
+            document.getElementById('waModalPreviewMessage').innerText = `"${customText}"`;
+            document.getElementById('waModal').classList.remove('hidden');
+        }
+
+        function closeWAModal() {
+            document.getElementById('waModal').classList.add('hidden');
+        }
+
+        function redirectWA(phoneNumber) {
+            const encodedMsg = encodeURIComponent(currentWAMessage);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMsg}`, '_blank');
+            closeWAModal();
+        }
+
+        // Fleet Filtering
+        function filterFleet(category) {
+            const cards = document.querySelectorAll('.fleet-card');
+            const tabs = document.querySelectorAll('.fleet-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-amber-500', 'text-slate-950');
+                tab.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+                activeBtn.classList.add('bg-amber-500', 'text-slate-950');
+            }
+
+            cards.forEach(card => {
+                if(category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Populate Sub-Options in Form
+        function updateSubOptions() {
+            const cat = document.getElementById('quoteCategory').value;
+            const subSelect = document.getElementById('quoteSubItem');
+            subSelect.innerHTML = "";
+
+            if (subCategoryData[cat]) {
+                subCategoryData[cat].forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = item;
+                    opt.textContent = item;
+                    subSelect.appendChild(opt);
+                });
+            }
+        }
+
+        // Handle Request Quote Form Submission
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('quoteName').value;
+            const location = document.getElementById('quoteLocation').value;
+            const category = document.getElementById('quoteCategory').value;
+            const subItem = document.getElementById('quoteSubItem').value;
+            const volume = document.getElementById('quoteVolume').value;
+            const targetPhone = document.getElementById('quoteTargetPhone').value;
+            const notes = document.getElementById('quoteNotes').value || 'Tidak ada catatan khusus.';
+
+            const formattedMessage = `Halo Pak, saya ingin minta penawaran harga (Request Quote):\n\n` +
+                                     `• *Nama/Perusahaan*: ${name}\n` +
+                                     `• *Lokasi Proyek*: ${location}\n` +
+                                     `• *Kategori*: ${category}\n` +
+                                     `• *Pilihan Armada/Material*: ${subItem}\n` +
+                                     `• *Durasi/Volume*: ${volume}\n` +
+                                     `• *Catatan Pengerjaan*: ${notes}\n\n` +
+                                     `Mohon diinformasikan ketersediaan unit/material dan estimasi harganya. Terima kasih!`;
+
+            const encoded = encodeURIComponent(formattedMessage);
+            window.open(`https://wa.me/${targetPhone}?text=${encoded}`, '_blank');
+        }
+
+        // Initialize Options on Load
+        window.onload = function() {
+            updateSubOptions();
+        };
+    </script>
+</body>
+</html>
